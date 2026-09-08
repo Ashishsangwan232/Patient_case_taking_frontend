@@ -90,9 +90,7 @@
   width: 100%;
 
   display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 15px;
 
@@ -302,7 +300,6 @@
   height: 40px;
 
   flex: 1;
-
   min-width: 0;
 
   padding: 0 12px;
@@ -315,7 +312,6 @@
   box-sizing: border-box;
 
   border: 1px solid #e0e6ee;
-
   border-radius: 10px;
 
   background: #fbfcfe;
@@ -361,7 +357,6 @@
   gap: 7px;
 
   border: 1px solid #e0e6ee;
-
   border-radius: 10px;
 
   background: #ffffff;
@@ -387,7 +382,6 @@
   padding: 0 12px;
 
   border: 1px solid #e0e6ee;
-
   border-radius: 10px;
 
   outline: none;
@@ -402,78 +396,109 @@
 }
 
 /* =========================================================
-   TABLE WRAPPER
+   PATIENT TABLE - CLEAN FLEX LAYOUT
    ========================================================= */
+
+/*
+   IMPORTANT:
+   We use flex instead of grid here.
+   The JSX has six direct children in every patient row:
+   Patient / ID / Age-Gender / Last Visit / Status / Actions.
+*/
 
 .patients-table-wrapper {
   width: 100%;
-
   overflow-x: auto;
+  overflow-y: hidden;
 }
-
-/* =========================================================
-   TABLE HEADER + ROW
-   ========================================================= */
 
 .patients-table-header,
 .patient-row {
-  display: grid;
-
-  grid-template-columns:
-    minmax(280px, 1.7fr)
-    minmax(170px, 1fr)
-    minmax(130px, 0.8fr)
-    minmax(175px, 1fr)
-    minmax(145px, 0.85fr)
-    115px;
-
+  width: 100%;
+  display: flex;
   align-items: center;
-
-  column-gap: 14px;
-
   box-sizing: border-box;
-
-  min-width: 1080px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 
-/* =========================================================
-   TABLE HEADER
-   ========================================================= */
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
 
 .patients-table-header {
   height: 46px;
-
-  padding: 0 22px;
+  min-height: 46px;
 
   background: #fafbfd;
-
   border-bottom: 1px solid #edf0f4;
 
   color: #8d97a8;
-
   font-size: 9px;
   font-weight: 700;
 
   text-transform: uppercase;
-
   letter-spacing: 0.04em;
 }
 
-/* =========================================================
+.patients-table-header > div {
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.patients-table-header > div:nth-child(1) {
+  width: 31%;
+}
+
+.patients-table-header > div:nth-child(2) {
+  width: 17%;
+}
+
+.patients-table-header > div:nth-child(3) {
+  width: 14%;
+}
+
+.patients-table-header > div:nth-child(4) {
+  width: 17%;
+}
+
+.patients-table-header > div:nth-child(5) {
+  width: 13%;
+}
+
+.patients-table-header > div:nth-child(6) {
+  width: 8%;
+  justify-content: flex-end;
+}
+
+/* ---------------------------------------------------------
+   LIST
+   --------------------------------------------------------- */
+
+.patients-list {
+  width: 100%;
+  display: block;
+}
+
+/* ---------------------------------------------------------
    PATIENT ROW
-   ========================================================= */
+   --------------------------------------------------------- */
 
 .patient-row {
-  min-height: 78px;
+  height: 76px;
+  min-height: 76px;
 
-  padding: 0 22px;
-
-  border-bottom: 1px solid #eef1f5;
+  margin: 0;
 
   background: #ffffff;
+  border-bottom: 1px solid #eef1f5;
 
-  transition:
-    background 0.18s ease;
+  overflow: hidden;
+
+  transition: background 0.18s ease;
 }
 
 .patient-row:last-child {
@@ -484,25 +509,100 @@
   background: #fbfdff;
 }
 
-/* =========================================================
-   PATIENT
-   ========================================================= */
-
-.patient-main {
+/* Every direct child gets one fixed column */
+.patient-row > div {
   min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
 
   display: flex;
-
   align-items: center;
 
-  gap: 11px;
+  margin: 0;
+  padding: 0;
 }
+
+.patient-row > .patient-main {
+  width: 31%;
+  flex: 0 0 31%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 11px;
+
+  overflow: hidden;
+}
+
+.patient-row > .patient-id {
+  width: 17%;
+  flex: 0 0 17%;
+
+  color: #657188;
+  font-size: 9.5px;
+  font-weight: 500;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.patient-row > .patient-demographic {
+  width: 14%;
+  flex: 0 0 14%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.patient-row > .patient-last-visit {
+  width: 17%;
+  flex: 0 0 17%;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.patient-row > div:nth-child(5) {
+  width: 13%;
+  flex: 0 0 13%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  overflow: visible;
+}
+
+.patient-row > .patient-actions {
+  width: 8%;
+  flex: 0 0 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 2px;
+
+  overflow: visible;
+}
+
+/* ---------------------------------------------------------
+   PATIENT IDENTITY
+   --------------------------------------------------------- */
 
 .patient-avatar {
   width: 40px;
   height: 40px;
 
-  flex-shrink: 0;
+  flex: 0 0 40px;
 
   display: flex;
   align-items: center;
@@ -511,7 +611,6 @@
   border-radius: 50%;
 
   background: #edf4ff;
-
   border: 1px solid #dfebff;
 
   color: #2563eb;
@@ -522,12 +621,17 @@
 
 .patient-name-block {
   min-width: 0;
+  width: calc(100% - 51px);
 
   overflow: hidden;
 }
 
 .patient-name-block strong {
   display: block;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
 
   overflow: hidden;
 
@@ -535,62 +639,33 @@
 
   font-size: 11px;
   font-weight: 650;
-
-  text-overflow: ellipsis;
+  line-height: 16px;
 
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .patient-name-block span {
   display: block;
+  width: 100%;
 
-  margin-top: 4px;
+  margin: 3px 0 0;
+  padding: 0;
 
   overflow: hidden;
 
   color: #929baa;
 
   font-size: 8.5px;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-}
-
-/* =========================================================
-   PATIENT ID
-   ========================================================= */
-
-.patient-id {
-  min-width: 0;
-
-  overflow: hidden;
-
-  color: #657188;
-
-  font-size: 9.5px;
-  font-weight: 500;
-
-  text-overflow: ellipsis;
+  line-height: 12px;
 
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    AGE / GENDER
-   ========================================================= */
-
-.patient-demographic {
-  min-width: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  justify-content: center;
-}
+   --------------------------------------------------------- */
 
 .patient-demographic strong {
   display: block;
@@ -615,18 +690,13 @@
   white-space: nowrap;
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    LAST VISIT
-   ========================================================= */
-
-.patient-last-visit {
-  min-width: 0;
-
-  overflow: hidden;
-}
+   --------------------------------------------------------- */
 
 .patient-last-visit strong {
   display: block;
+  width: 100%;
 
   overflow: hidden;
 
@@ -635,32 +705,28 @@
   font-size: 9px;
   font-weight: 500;
 
-  text-overflow: ellipsis;
-
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    STATUS
-   ========================================================= */
+   --------------------------------------------------------- */
 
 .patient-status {
   width: fit-content;
 
-  padding: 6px 8px;
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 5px;
+
+  padding: 6px 8px;
 
   box-sizing: border-box;
 
   border-radius: 7px;
 
   font-size: 8px;
-
   font-weight: 650;
 
   white-space: nowrap;
@@ -670,7 +736,7 @@
   width: 5px;
   height: 5px;
 
-  flex-shrink: 0;
+  flex: 0 0 5px;
 
   border-radius: 50%;
 
@@ -697,21 +763,9 @@
   background: #edf4ff;
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    ACTIONS
-   ========================================================= */
-
-.patient-actions {
-  min-width: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: flex-end;
-
-  gap: 3px;
-}
+   --------------------------------------------------------- */
 
 .favorite-button,
 .patient-view-button,
@@ -719,14 +773,16 @@
   width: 29px;
   height: 29px;
 
-  flex-shrink: 0;
+  flex: 0 0 29px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: none;
+  margin: 0;
+  padding: 0;
 
+  border: none;
   border-radius: 8px;
 
   background: transparent;
@@ -760,9 +816,9 @@
   background: #f1f4f8;
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    FOOTER
-   ========================================================= */
+   --------------------------------------------------------- */
 
 .patients-footer {
   min-height: 65px;
@@ -770,9 +826,7 @@
   padding: 0 22px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   box-sizing: border-box;
@@ -780,7 +834,6 @@
   border-top: 1px solid #edf0f4;
 
   color: #8d97a8;
-
   font-size: 9px;
 }
 
@@ -790,9 +843,7 @@
 
 .pagination {
   display: flex;
-
   align-items: center;
-
   gap: 4px;
 }
 
@@ -809,11 +860,9 @@
   justify-content: center;
 
   border: 1px solid #e4e8ef;
-
   border-radius: 7px;
 
   background: #ffffff;
-
   color: #657188;
 
   font-size: 9px;
@@ -828,21 +877,18 @@
 
 .pagination-button.active {
   border-color: #2563eb;
-
   background: #2563eb;
-
   color: #ffffff;
 }
 
 .pagination-button.disabled {
   opacity: 0.45;
-
   cursor: not-allowed;
 }
 
-/* =========================================================
+/* ---------------------------------------------------------
    RESPONSIVE
-   ========================================================= */
+   --------------------------------------------------------- */
 
 @media (max-width: 1150px) {
   .patients-summary {
@@ -851,6 +897,11 @@
 
   .patients-table-wrapper {
     overflow-x: auto;
+  }
+
+  .patients-table-header,
+  .patient-row {
+    min-width: 980px;
   }
 }
 
@@ -889,4 +940,119 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
+}
+
+
+/* =========================================================
+   FINAL FIX - PATIENT NAME / AVATAR VISIBILITY
+   ========================================================= */
+
+.patients-page .patient-row > .patient-main {
+  width: 31% !important;
+  flex: 0 0 31% !important;
+
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 11px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 2 !important;
+
+  box-sizing: border-box !important;
+}
+
+.patients-page .patient-row > .patient-main .patient-avatar {
+  width: 40px !important;
+  height: 40px !important;
+
+  min-width: 40px !important;
+  min-height: 40px !important;
+
+  flex: 0 0 40px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  position: relative !important;
+  z-index: 3 !important;
+
+  box-sizing: border-box !important;
+}
+
+.patients-page .patient-row > .patient-main .patient-name-block {
+  width: calc(100% - 51px) !important;
+
+  min-width: 0 !important;
+  max-width: none !important;
+
+  display: block !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  position: relative !important;
+  z-index: 3 !important;
+
+  overflow: hidden !important;
+}
+
+.patients-page .patient-row > .patient-main .patient-name-block strong {
+  display: block !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #172033 !important;
+
+  font-size: 11px !important;
+  font-weight: 650 !important;
+  line-height: 16px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.patients-page .patient-row > .patient-main .patient-name-block span {
+  display: block !important;
+
+  width: 100% !important;
+
+  margin: 3px 0 0 !important;
+  padding: 0 !important;
+
+  color: #929baa !important;
+
+  font-size: 8.5px !important;
+  line-height: 12px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
