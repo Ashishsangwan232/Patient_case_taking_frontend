@@ -1,0 +1,483 @@
+/* =========================================
+   MY CASES PAGE
+========================================= */
+
+.my-cases-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.my-cases-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #8a99b2;
+  font-size: 12px;
+}
+
+.my-cases-breadcrumb strong {
+  color: #53627c;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.my-cases-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.my-cases-header h1 {
+  margin: 0 0 7px;
+  color: #142541;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.my-cases-header p {
+  margin: 0;
+  color: #7d8da7;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.my-cases-summary {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(28, 45, 75, 0.035);
+}
+
+.my-cases-summary div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.my-cases-summary strong {
+  color: #142541;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.my-cases-summary span {
+  color: #8a99b2;
+  font-size: 9px;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.my-cases-card {
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(28, 45, 75, 0.035);
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.my-cases-toolbar {
+  min-height: 72px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid #edf1f6;
+  box-sizing: border-box;
+}
+
+.my-cases-search {
+  width: 280px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid #dfe6ef;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #9aa8bb;
+  box-sizing: border-box;
+}
+
+.my-cases-search:focus-within {
+  border-color: #bfd1f7;
+  background: #ffffff;
+}
+
+.my-cases-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #34445f;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.my-cases-search input::placeholder {
+  color: #9aa8bb;
+}
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.my-cases-filters {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.case-filter-button,
+.case-filter-icon {
+  height: 35px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #6f7e97;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.case-filter-button:hover,
+.case-filter-icon:hover {
+  background: #f6f8fc;
+  color: #2563eb;
+}
+
+.case-filter-button.active {
+  background: #edf3ff;
+  border-color: #d7e4ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.case-filter-button span {
+  min-width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #f3f6fb;
+  color: #7b8aa4;
+  font-size: 8px;
+}
+
+.case-filter-button.active span {
+  background: #ffffff;
+  color: #2563eb;
+}
+
+
+/* =========================================
+   CASE LIST
+========================================= */
+
+.my-cases-list {
+  padding: 0 20px;
+}
+
+
+/* =========================================
+   CASE ITEM
+========================================= */
+
+.my-case-item {
+  min-height: 185px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid #edf1f6;
+  box-sizing: border-box;
+}
+
+.my-case-item:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   CASE ICON
+========================================= */
+
+.my-case-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #edf3ff;
+  color: #2563eb;
+}
+
+
+/* =========================================
+   CASE MAIN
+========================================= */
+
+.my-case-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.my-case-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.my-case-title-row h3 {
+  margin: 0 0 4px;
+  color: #142541;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.my-case-id {
+  color: #8a99b2;
+  font-size: 9px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.my-case-status {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.my-case-status > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.my-case-status.progress {
+  background: #f1eaff;
+  color: #7041e8;
+}
+
+.my-case-status.progress > span {
+  background: #7c3aed;
+}
+
+.my-case-status.completed {
+  background: #eaf8f2;
+  color: #00966d;
+}
+
+.my-case-status.completed > span {
+  background: #00a77a;
+}
+
+
+/* =========================================
+   CASE DETAILS
+========================================= */
+
+.my-case-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.my-case-details div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8090a9;
+}
+
+.my-case-details span {
+  font-size: 10px;
+}
+
+
+/* =========================================
+   COMPLAINT
+========================================= */
+
+.my-case-complaint {
+  margin-top: 15px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.my-case-complaint span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8a99b2;
+  font-size: 8px;
+}
+
+.my-case-complaint p {
+  margin: 0;
+  color: #61718b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.my-case-view-button {
+  height: 35px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #dce5f2;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #53627c;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.my-case-view-button:hover {
+  background: #f5f8ff;
+  border-color: #bfd1f7;
+  color: #2563eb;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .my-cases-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-cases-summary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .my-cases-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-cases-search {
+    width: 100%;
+  }
+
+  .my-cases-filters {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .my-case-item {
+    flex-wrap: wrap;
+  }
+
+  .my-case-main {
+    width: calc(100% - 58px);
+    flex: none;
+  }
+
+  .my-case-view-button {
+    width: 100%;
+    margin-left: 58px;
+  }
+
+  .my-cases-summary {
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .my-cases-header h1 {
+    font-size: 23px;
+  }
+
+  .my-cases-list {
+    padding: 0 15px;
+  }
+
+  .my-case-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .my-case-details {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

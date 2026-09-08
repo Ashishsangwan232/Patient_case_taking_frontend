@@ -1,0 +1,290 @@
+/* =========================================
+   PATIENT PROFILE PAGE
+========================================= */
+
+.patient-profile-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.profile-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.profile-breadcrumb {
+  margin: 0 0 10px;
+  color: #8a99b2;
+  font-size: 12px;
+}
+
+.profile-page-header h1 {
+  margin: 0;
+  color: #142541;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.profile-subtitle {
+  margin: 8px 0 0;
+  color: #7d8da8;
+  font-size: 14px;
+}
+
+.profile-edit-button {
+  height: 44px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #dbe5f3;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #2563eb;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-edit-button:hover {
+  background: #f4f7ff;
+  border-color: #c8d8f5;
+}
+
+/* =========================================
+   PROFILE OVERVIEW
+========================================= */
+
+.profile-overview-card {
+  min-height: 132px;
+  padding: 24px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-sizing: border-box;
+  border: 1px solid #e1e8f1;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(35, 55, 90, 0.04);
+  margin-bottom: 20px;
+}
+
+.profile-avatar-large {
+  width: 78px;
+  height: 78px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #edf3ff;
+  color: #2563eb;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.profile-overview-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-overview-info h2 {
+  margin: 0;
+  color: #142541;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile-overview-info p {
+  margin: 6px 0 0;
+  color: #8a99b2;
+  font-size: 12px;
+}
+
+.profile-overview-meta {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #66758e;
+  font-size: 12px;
+}
+
+.profile-status {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 8px;
+  background: #eaf9f3;
+  color: #059669;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.profile-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+/* =========================================
+   SECTION CARD
+========================================= */
+
+.profile-section-card {
+  margin-bottom: 20px;
+  border: 1px solid #e1e8f1;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(35, 55, 90, 0.04);
+  overflow: hidden;
+}
+
+.profile-section-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.profile-section-header h2 {
+  margin: 0;
+  color: #142541;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.profile-section-header p {
+  margin: 5px 0 0;
+  color: #8a99b2;
+  font-size: 11px;
+}
+
+/* =========================================
+   PERSONAL INFO
+========================================= */
+
+.profile-info-grid {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 50px;
+  row-gap: 24px;
+}
+
+.profile-info-item {
+  min-width: 0;
+}
+
+.profile-info-item span,
+.profile-health-item span,
+.profile-account-row span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8a99b2;
+  font-size: 11px;
+}
+
+.profile-info-item strong,
+.profile-health-item strong,
+.profile-account-row strong {
+  display: block;
+  color: #263754;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-info-full {
+  grid-column: 1 / -1;
+}
+
+/* =========================================
+   HEALTH INFORMATION
+========================================= */
+
+.profile-health-grid {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.profile-health-item {
+  padding: 16px;
+  border: 1px solid #edf1f6;
+  border-radius: 10px;
+  background: #fafbfd;
+}
+
+/* =========================================
+   ACCOUNT INFORMATION
+========================================= */
+
+.profile-account-row {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .profile-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-health-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-account-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-page-header h1 {
+    font-size: 27px;
+  }
+
+  .profile-overview-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-status {
+    align-self: flex-start;
+  }
+
+  .profile-info-grid,
+  .profile-health-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-info-full {
+    grid-column: auto;
+  }
+
+  .profile-section-header,
+  .profile-info-grid,
+  .profile-health-grid,
+  .profile-account-row {
+    padding: 18px;
+  }
+}

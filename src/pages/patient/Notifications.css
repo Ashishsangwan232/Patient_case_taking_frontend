@@ -1,0 +1,353 @@
+/* =========================================
+   NOTIFICATIONS PAGE
+========================================= */
+
+.patient-notifications-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.notifications-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.notifications-breadcrumb {
+  margin: 0 0 10px;
+  color: #8a99b2;
+  font-size: 12px;
+}
+
+.notifications-page-header h1 {
+  margin: 0;
+  color: #142541;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.notifications-subtitle {
+  margin: 8px 0 0;
+  color: #8191aa;
+  font-size: 14px;
+}
+
+.mark-all-button {
+  height: 40px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #dce5f0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #526682;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mark-all-button:hover {
+  border-color: #cbdaf1;
+  background: #f7faff;
+  color: #2563eb;
+}
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.notifications-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.notification-summary-card {
+  min-height: 90px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e2e8f1;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(30, 55, 90, 0.04);
+}
+
+.notification-summary-number {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #edf3ff;
+  color: #2563eb;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.notification-summary-card strong {
+  display: block;
+  color: #263754;
+  font-size: 13px;
+}
+
+.notification-summary-card span {
+  display: block;
+  margin-top: 4px;
+  color: #8a99b2;
+  font-size: 11px;
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.notifications-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e1e8f1;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(30, 55, 90, 0.04);
+}
+
+.notifications-card-header {
+  min-height: 82px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.notifications-card-header h2 {
+  margin: 0;
+  color: #142541;
+  font-size: 17px;
+}
+
+.notifications-card-header p {
+  margin: 5px 0 0;
+  color: #8a99b2;
+  font-size: 12px;
+}
+
+.notification-count-badge {
+  padding: 8px 12px;
+  border-radius: 9px;
+  background: #edf3ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================
+   NOTIFICATION ROW
+========================================= */
+
+.notification-row {
+  min-height: 105px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #edf1f6;
+  transition: background 0.2s ease;
+}
+
+.notification-row:hover {
+  background: #fbfdff;
+}
+
+.notification-row.notification-unread {
+  background: #fcfdff;
+}
+
+.notification-row.notification-unread:hover {
+  background: #f8fbff;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.notification-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.notification-icon.appointment {
+  background: #edf3ff;
+  color: #2563eb;
+}
+
+.notification-icon.case {
+  background: #f2eaff;
+  color: #7c3aed;
+}
+
+.notification-icon.report {
+  background: #e8f8f1;
+  color: #00a878;
+}
+
+.notification-icon.system {
+  background: #fff3e2;
+  color: #f28a00;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.notification-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.notification-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notification-title-row strong {
+  color: #263754;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.unread-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.notification-content p {
+  max-width: 850px;
+  margin: 6px 0 7px;
+  color: #697a94;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.notification-time {
+  color: #9aa7b9;
+  font-size: 10px;
+}
+
+/* =========================================
+   MORE BUTTON
+========================================= */
+
+.notification-more-button {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe7f1;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #72839d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-more-button:hover {
+  border-color: #cbdaf1;
+  background: #f6f9ff;
+  color: #2563eb;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.notifications-footer {
+  min-height: 68px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.notifications-footer span {
+  color: #8a99b2;
+  font-size: 11px;
+}
+
+.notifications-footer strong {
+  color: #536680;
+}
+
+.view-all-notifications {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-all-notifications:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+  .notifications-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .notifications-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .notifications-card-header {
+    padding: 18px;
+  }
+
+  .notification-row {
+    padding: 18px;
+  }
+
+  .notification-content p {
+    max-width: none;
+  }
+
+  .notifications-footer {
+    padding: 0 18px;
+  }
+}
