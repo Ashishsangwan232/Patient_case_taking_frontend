@@ -1,6 +1,60 @@
+import { useState } from "react";
 import "./Profile.css";
 
 function Profile() {
+  const [isEditOpen, setIsEditOpen] = useState(false);
+
+  const [profile, setProfile] = useState({
+    fullName: "Md. Jamal Hossain",
+    patientId: "SIH-2026-00125",
+    dateOfBirth: "15 March 1981",
+    gender: "Male",
+    phone: "+91 98765 43210",
+    email: "jamal@example.com",
+    address: "24 Main Street, New Delhi, India",
+    emergencyContact: "+91 98765 11111",
+  });
+
+  const [editForm, setEditForm] = useState(profile);
+
+  const openEditModal = () => {
+    setEditForm(profile);
+    setIsEditOpen(true);
+  };
+
+  const closeEditModal = () => {
+    setEditForm(profile);
+    setIsEditOpen(false);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setEditForm((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = (event) => {
+    event.preventDefault();
+
+    setProfile(editForm);
+    setIsEditOpen(false);
+  };
+
+  const getInitials = (name) => {
+    const parts = name.trim().split(" ").filter(Boolean);
+
+    if (parts.length === 0) return "P";
+
+    if (parts.length === 1) {
+      return parts[0].slice(0, 2).toUpperCase();
+    }
+
+    return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+  };
+
   return (
     <div className="patient-profile-page">
       {/* Page Header */}
@@ -17,23 +71,29 @@ function Profile() {
           </p>
         </div>
 
-        <button className="profile-edit-button">
+        <button
+          type="button"
+          className="profile-edit-button"
+          onClick={openEditModal}
+        >
           ✎ <span>Edit Profile</span>
         </button>
       </div>
 
       {/* Profile Overview */}
       <section className="profile-overview-card">
-        <div className="profile-avatar-large">MJ</div>
+        <div className="profile-avatar-large">
+          {getInitials(profile.fullName)}
+        </div>
 
         <div className="profile-overview-info">
-          <h2>Md. Jamal Hossain</h2>
-          <p>Patient ID: SIH-2026-00125</p>
+          <h2>{profile.fullName}</h2>
+          <p>Patient ID: {profile.patientId}</p>
 
           <div className="profile-overview-meta">
             <span>45 Years</span>
             <span>•</span>
-            <span>Male</span>
+            <span>{profile.gender}</span>
             <span>•</span>
             <span>Patient</span>
           </div>
@@ -57,39 +117,37 @@ function Profile() {
         <div className="profile-info-grid">
           <div className="profile-info-item">
             <span>Full Name</span>
-            <strong>Md. Jamal Hossain</strong>
+            <strong>{profile.fullName}</strong>
           </div>
 
           <div className="profile-info-item">
             <span>Patient ID</span>
-            <strong>SIH-2026-00125</strong>
+            <strong>{profile.patientId}</strong>
           </div>
 
           <div className="profile-info-item">
             <span>Date of Birth</span>
-            <strong>15 March 1981</strong>
+            <strong>{profile.dateOfBirth}</strong>
           </div>
 
           <div className="profile-info-item">
             <span>Gender</span>
-            <strong>Male</strong>
+            <strong>{profile.gender}</strong>
           </div>
 
           <div className="profile-info-item">
             <span>Phone Number</span>
-            <strong>+91 98765 43210</strong>
+            <strong>{profile.phone}</strong>
           </div>
 
           <div className="profile-info-item">
             <span>Email Address</span>
-            <strong>jamal@example.com</strong>
+            <strong>{profile.email}</strong>
           </div>
 
           <div className="profile-info-item profile-info-full">
             <span>Address</span>
-            <strong>
-              24 Main Street, New Delhi, India
-            </strong>
+            <strong>{profile.address}</strong>
           </div>
         </div>
       </section>
@@ -131,7 +189,7 @@ function Profile() {
 
           <div className="profile-health-item">
             <span>Emergency Contact</span>
-            <strong>+91 98765 11111</strong>
+            <strong>{profile.emergencyContact}</strong>
           </div>
         </div>
       </section>
@@ -162,6 +220,171 @@ function Profile() {
           </div>
         </div>
       </section>
+
+      {/* Edit Profile Modal */}
+      {isEditOpen && (
+        <div
+          className="profile-modal-overlay"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              closeEditModal();
+            }
+          }}
+        >
+          <div
+            className="profile-edit-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="profile-edit-title"
+          >
+            <div className="profile-modal-header">
+              <div>
+                <p className="profile-modal-eyebrow">
+                  Patient Profile
+                </p>
+
+                <h2 id="profile-edit-title">Edit Profile</h2>
+
+                <p>
+                  Update your personal and contact information.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                className="profile-modal-close"
+                onClick={closeEditModal}
+                aria-label="Close"
+              >
+                ×
+              </button>
+            </div>
+
+            <form onSubmit={handleSave}>
+              <div className="profile-edit-form">
+                <div className="profile-form-group">
+                  <label htmlFor="fullName">Full Name</label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    value={editForm.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="profile-form-group">
+                  <label htmlFor="patientId">Patient ID</label>
+                  <input
+                    id="patientId"
+                    name="patientId"
+                    type="text"
+                    value={editForm.patientId}
+                    disabled
+                  />
+                  <small>
+                    Patient ID cannot be changed.
+                  </small>
+                </div>
+
+                <div className="profile-form-group">
+                  <label htmlFor="dateOfBirth">Date of Birth</label>
+                  <input
+                    id="dateOfBirth"
+                    name="dateOfBirth"
+                    type="text"
+                    value={editForm.dateOfBirth}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="profile-form-group">
+                  <label htmlFor="gender">Gender</label>
+                  <select
+                    id="gender"
+                    name="gender"
+                    value={editForm.gender}
+                    onChange={handleChange}
+                  >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div className="profile-form-group">
+                  <label htmlFor="phone">Phone Number</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={editForm.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="profile-form-group">
+                  <label htmlFor="email">Email Address</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={editForm.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="profile-form-group profile-form-full">
+                  <label htmlFor="address">Address</label>
+                  <textarea
+                    id="address"
+                    name="address"
+                    rows="3"
+                    value={editForm.address}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="profile-form-group profile-form-full">
+                  <label htmlFor="emergencyContact">
+                    Emergency Contact
+                  </label>
+                  <input
+                    id="emergencyContact"
+                    name="emergencyContact"
+                    type="tel"
+                    value={editForm.emergencyContact}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="profile-modal-footer">
+                <button
+                  type="button"
+                  className="profile-cancel-button"
+                  onClick={closeEditModal}
+                >
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  className="profile-save-button"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

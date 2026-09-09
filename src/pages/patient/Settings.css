@@ -125,6 +125,10 @@
   border-bottom: none;
 }
 
+.settings-row > div:first-child {
+  min-width: 0;
+}
+
 .settings-row strong,
 .settings-preference strong,
 .settings-danger-row strong {
@@ -141,6 +145,7 @@
   display: block;
   color: #8a99b2;
   font-size: 11px;
+  line-height: 1.5;
 }
 
 /* =========================================
@@ -156,6 +161,7 @@
 }
 
 .settings-switch input {
+  position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
@@ -212,6 +218,7 @@
 .settings-select:focus,
 .settings-language:focus {
   border-color: #8eb0f5;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.07);
 }
 
 /* =========================================
@@ -238,6 +245,12 @@
   border-color: #bcd0f3;
 }
 
+.settings-action-button.enabled {
+  border-color: #bce7d5;
+  background: #eaf9f3;
+  color: #059669;
+}
+
 /* =========================================
    LANGUAGE
 ========================================= */
@@ -248,6 +261,77 @@
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+}
+
+/* =========================================
+   SAVE BAR
+========================================= */
+
+.settings-save-bar {
+  margin-bottom: 20px;
+  padding: 17px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid #dce6f4;
+  border-radius: 12px;
+  background: #f8faff;
+}
+
+.settings-save-bar strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #263754;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.settings-save-bar span {
+  display: block;
+  color: #8795aa;
+  font-size: 10px;
+}
+
+.settings-save-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.settings-reset-button,
+.settings-save-button {
+  height: 40px;
+  padding: 0 17px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.settings-reset-button {
+  border: 1px solid #dbe3ee;
+  background: #ffffff;
+  color: #5d6c84;
+}
+
+.settings-reset-button:hover {
+  background: #f5f7fa;
+}
+
+.settings-save-button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.settings-save-button:hover {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+  transform: translateY(-1px);
 }
 
 /* =========================================
@@ -277,10 +361,224 @@
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .settings-signout-button:hover {
   background: #fff0f0;
+  border-color: #fca5a5;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.settings-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 28, 49, 0.48);
+  backdrop-filter: blur(3px);
+}
+
+.settings-modal {
+  width: min(520px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #e0e7f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(20, 37, 65, 0.18);
+}
+
+.settings-modal-header {
+  padding: 24px 26px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.settings-modal-eyebrow {
+  margin: 0 0 6px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.settings-modal-header h2 {
+  margin: 0;
+  color: #142541;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.settings-modal-header p:last-child {
+  margin: 6px 0 0;
+  color: #8290a8;
+  font-size: 12px;
+}
+
+.settings-modal-close {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #71809a;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.settings-modal-close:hover {
+  background: #f7f9fc;
+  color: #263754;
+}
+
+/* =========================================
+   PASSWORD FORM
+========================================= */
+
+.settings-password-form {
+  padding: 24px 26px;
+}
+
+.settings-form-group {
+  margin-bottom: 18px;
+}
+
+.settings-form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.settings-form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #52627d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.settings-form-group input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  border: 1px solid #dbe3ee;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #263754;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.settings-form-group input:focus {
+  border-color: #8eb0f5;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.settings-form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #98a5b8;
+  font-size: 10px;
+}
+
+.settings-form-message {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.settings-form-message.success {
+  background: #eaf9f3;
+  color: #059669;
+}
+
+.settings-form-message.error {
+  background: #fff1f1;
+  color: #dc2626;
+}
+
+.settings-modal-footer {
+  padding: 18px 26px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #edf1f6;
+  background: #fbfcfe;
+}
+
+/* =========================================
+   CONFIRMATION MODAL
+========================================= */
+
+.settings-confirm-modal {
+  width: min(410px, 100%);
+  padding: 28px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #e0e7f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(20, 37, 65, 0.18);
+}
+
+.settings-confirm-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #edf3ff;
+  color: #2563eb;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.settings-confirm-icon.red {
+  background: #fff0f0;
+  color: #dc2626;
+}
+
+.settings-confirm-modal h2 {
+  margin: 0;
+  color: #142541;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.settings-confirm-modal p {
+  margin: 8px auto 0;
+  max-width: 320px;
+  color: #8290a8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.settings-confirm-actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* =========================================
@@ -314,10 +612,62 @@
     width: 100%;
   }
 
+  .settings-save-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .settings-save-actions {
+    width: 100%;
+  }
+
+  .settings-reset-button,
+  .settings-save-button {
+    flex: 1;
+  }
+
   .settings-card-header,
   .settings-row,
   .settings-preference,
   .settings-danger-row {
     padding: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .settings-modal-overlay {
+    padding: 12px;
+  }
+
+  .settings-modal,
+  .settings-confirm-modal {
+    border-radius: 13px;
+  }
+
+  .settings-modal-header,
+  .settings-password-form,
+  .settings-modal-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .settings-modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .settings-modal-footer button {
+    width: 100%;
+  }
+
+  .settings-confirm-modal {
+    padding: 22px 18px;
+  }
+
+  .settings-confirm-actions {
+    flex-direction: column-reverse;
+  }
+
+  .settings-confirm-actions button {
+    width: 100%;
   }
 }

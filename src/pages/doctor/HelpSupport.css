@@ -1,0 +1,639 @@
+.doctor-help-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 23px 28px 40px;
+  box-sizing: border-box;
+}
+
+/* ================= BREADCRUMB ================= */
+
+.doctor-help-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #9aa3b1;
+  font-size: 9px;
+  margin-bottom: 16px;
+}
+
+.doctor-help-breadcrumb span {
+  color: #c4cad2;
+}
+
+/* ================= HEADER ================= */
+
+.doctor-help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.doctor-help-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.doctor-help-header p {
+  margin: 6px 0 0;
+  color: #929cac;
+  font-size: 10px;
+}
+
+.doctor-help-dashboard-button {
+  height: 34px;
+  padding: 0 13px;
+  border: 1px solid #e2e6eb;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #687382;
+  font-family: inherit;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.doctor-help-dashboard-button:hover {
+  color: #2867e9;
+  border-color: #d5def7;
+}
+
+/* ================= HERO ================= */
+
+.doctor-help-hero {
+  min-height: 105px;
+  padding: 17px 19px;
+  margin-bottom: 22px;
+  border: 1px solid #dce5fa;
+  border-radius: 11px;
+  background: #f7f9ff;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  box-sizing: border-box;
+}
+
+.doctor-help-hero-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #e7eeff;
+  color: #2867e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.doctor-help-hero-content {
+  flex: 1;
+}
+
+.doctor-help-hero-content h2 {
+  margin: 0;
+  color: #2e3a50;
+  font-size: 11px;
+}
+
+.doctor-help-hero-content p {
+  max-width: 620px;
+  margin: 6px 0 0;
+  color: #7d8796;
+  font-size: 7.5px;
+  line-height: 12px;
+}
+
+.doctor-contact-support-button {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #2867e9;
+  border-radius: 7px;
+  background: #2867e9;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 7.5px;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.doctor-contact-support-button span {
+  font-size: 11px;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.doctor-help-section-title {
+  margin-bottom: 11px;
+}
+
+.doctor-help-section-title h2 {
+  margin: 0;
+  color: #303a4b;
+  font-size: 11px;
+}
+
+.doctor-help-section-title p {
+  margin: 4px 0 0;
+  color: #9ba4b0;
+  font-size: 7px;
+}
+
+/* ================= QUICK HELP ================= */
+
+.doctor-help-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+  margin-bottom: 16px;
+}
+
+.doctor-help-quick-grid button {
+  min-height: 72px;
+  padding: 11px;
+  border: 1px solid #e5e9ee;
+  border-radius: 9px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.doctor-help-quick-grid button:hover {
+  border-color: #d5def7;
+  background: #fbfcff;
+}
+
+.doctor-help-quick-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.doctor-help-quick-icon.blue {
+  background: #edf3ff;
+  color: #3168e9;
+}
+
+.doctor-help-quick-icon.green {
+  background: #eaf7f1;
+  color: #1f946e;
+}
+
+.doctor-help-quick-icon.purple {
+  background: #f2edff;
+  color: #7951e8;
+}
+
+.doctor-help-quick-icon.orange {
+  background: #fff5e7;
+  color: #e58b14;
+}
+
+.doctor-help-quick-grid button div:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doctor-help-quick-grid strong {
+  color: #3f4a5b;
+  font-size: 7.8px;
+}
+
+.doctor-help-quick-grid span {
+  color: #9aa3af;
+  font-size: 6.5px;
+  line-height: 10px;
+}
+
+.doctor-help-quick-grid b {
+  color: #a1a9b4;
+  font-size: 11px;
+}
+
+/* ================= MAIN GRID ================= */
+
+.doctor-help-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
+  gap: 15px;
+}
+
+/* ================= CARD ================= */
+
+.doctor-help-card {
+  border: 1px solid #e5e9ee;
+  border-radius: 11px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.doctor-help-card-heading {
+  min-height: 65px;
+  padding: 13px 17px;
+  border-bottom: 1px solid #edf0f3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.doctor-help-card-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  background: #edf3ff;
+  color: #2867e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.doctor-help-card-icon.support {
+  background: #eaf7f1;
+  color: #238765;
+}
+
+.doctor-help-card-heading h2 {
+  margin: 0;
+  color: #303a4b;
+  font-size: 9px;
+}
+
+.doctor-help-card-heading p {
+  margin: 4px 0 0;
+  color: #9ba4b0;
+  font-size: 6.7px;
+}
+
+/* ================= FAQ ================= */
+
+.doctor-faq-list {
+  padding: 0 17px;
+}
+
+.doctor-faq-item {
+  border-bottom: 1px solid #eff1f4;
+}
+
+.doctor-faq-item:last-child {
+  border-bottom: 0;
+}
+
+.doctor-faq-item > button {
+  width: 100%;
+  min-height: 49px;
+  padding: 9px 0;
+  border: 0;
+  background: transparent;
+  color: #596474;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+  font-family: inherit;
+  font-size: 7.5px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.doctor-faq-item > button b {
+  color: #8f99a7;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.doctor-faq-item.open > button {
+  color: #2867e9;
+}
+
+.doctor-faq-answer {
+  padding: 0 20px 12px 0;
+  color: #929baa;
+  font-size: 6.8px;
+  line-height: 11px;
+}
+
+/* ================= SUPPORT ================= */
+
+.doctor-support-content {
+  padding: 10px 17px 17px;
+}
+
+.doctor-support-method {
+  min-height: 53px;
+  border-bottom: 1px solid #eff1f4;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.doctor-support-method-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #f0f6f4;
+  color: #238765;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.doctor-support-method div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doctor-support-method span {
+  color: #9aa3af;
+  font-size: 6.5px;
+}
+
+.doctor-support-method strong {
+  color: #4c5768;
+  font-size: 7.2px;
+}
+
+.doctor-support-request-button {
+  width: 100%;
+  height: 32px;
+  margin-top: 14px;
+  border: 1px solid #dce4ff;
+  border-radius: 7px;
+  background: #f5f7ff;
+  color: #2867e9;
+  font-family: inherit;
+  font-size: 7px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.doctor-support-request-button:hover {
+  background: #edf2ff;
+}
+
+/* ================= REMINDER ================= */
+
+.doctor-help-reminder {
+  margin-top: 15px;
+  padding: 12px 15px;
+  border: 1px solid #f0e3c7;
+  border-radius: 9px;
+  background: #fffaf0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.doctor-help-reminder-icon {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff0cf;
+  color: #c88616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.doctor-help-reminder strong {
+  color: #66502a;
+  font-size: 7.5px;
+}
+
+.doctor-help-reminder p {
+  margin: 4px 0 0;
+  color: #a28e69;
+  font-size: 6.5px;
+  line-height: 10px;
+}
+
+/* ================= MODAL ================= */
+
+.doctor-help-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 20px;
+  background: rgba(22, 31, 45, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.doctor-help-modal {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(24, 35, 52, 0.2);
+  overflow: hidden;
+}
+
+.doctor-help-modal-header {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf0f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.doctor-help-modal-header span {
+  color: #929baa;
+  font-size: 6.5px;
+}
+
+.doctor-help-modal-header h2 {
+  margin: 4px 0 0;
+  color: #293344;
+  font-size: 13px;
+}
+
+.doctor-help-modal-header button {
+  width: 27px;
+  height: 27px;
+  border: 0;
+  border-radius: 6px;
+  background: #f4f6f8;
+  color: #7d8794;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* ================= FORM ================= */
+
+.doctor-support-form {
+  padding: 17px 18px;
+}
+
+.doctor-support-field {
+  margin-bottom: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.doctor-support-field label {
+  color: #596373;
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.doctor-support-field select,
+.doctor-support-field textarea {
+  width: 100%;
+  border: 1px solid #e1e6eb;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #5d6878;
+  font-family: inherit;
+  font-size: 7.5px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.doctor-support-field select {
+  height: 34px;
+  padding: 0 9px;
+}
+
+.doctor-support-field textarea {
+  min-height: 100px;
+  padding: 9px;
+  resize: vertical;
+}
+
+.doctor-support-field textarea::placeholder {
+  color: #a4acb7;
+}
+
+.doctor-support-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.doctor-support-form-footer button {
+  height: 31px;
+  padding: 0 11px;
+  border: 1px solid #dfe4e9;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #697382;
+  font-family: inherit;
+  font-size: 7px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.doctor-support-form-footer button.primary {
+  border-color: #2867e9;
+  background: #2867e9;
+  color: #ffffff;
+}
+
+/* ================= SUCCESS ================= */
+
+.doctor-support-success {
+  min-height: 220px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.doctor-support-success > div {
+  width: 43px;
+  height: 43px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: #eaf7f1;
+  color: #238765;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.doctor-support-success strong {
+  color: #303a4b;
+  font-size: 10px;
+}
+
+.doctor-support-success p {
+  max-width: 270px;
+  margin: 6px 0 0;
+  color: #9ba4b0;
+  font-size: 7px;
+  line-height: 11px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .doctor-help-quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-help-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .doctor-help-page {
+    padding: 20px;
+  }
+
+  .doctor-help-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .doctor-help-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .doctor-contact-support-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doctor-help-quick-grid {
+    grid-template-columns: 1fr;
+  }
+}

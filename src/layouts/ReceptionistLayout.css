@@ -1,0 +1,23 @@
+.receptionist-layout {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: #f7f9fb;
+  overflow: hidden;
+}
+
+.receptionist-main {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.receptionist-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
